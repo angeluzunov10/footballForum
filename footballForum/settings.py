@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "footballForum.players.apps.PlayersConfig",
+    "footballForum.posts.apps.PostsConfig",
+    "footballForum.teams.apps.TeamsConfig",
+    "footballForum.common.apps.CommonConfig",
+    "footballForum.accounts.apps.AccountsConfig"
 ]
 
 MIDDLEWARE = [
