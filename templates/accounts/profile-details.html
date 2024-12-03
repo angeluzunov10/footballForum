@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'common/base.html' %}
+{% load static %}
+{% block title %}Profile Details{% endblock %}
 
-</body>
-</html>
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>{{ profile.user.username }}</h2>
+        </div>
+        <div class="card-body">
+            <!-- Profile Picture -->
+            {% if profile.profile_picture %}
+                <img src="{{ profile.profile_picture }}" alt="Profile Picture" class="img-fluid rounded-circle mx-auto d-block mb-3" style="width: 150px;">
+            {% else %}
+                <img src="{% static 'images/default-profile-pic.jpg' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mx-auto d-block mb-3" style="width: 150px;">
+            {% endif %}
+
+            <!-- Profile Details -->
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>First Name:</strong> {{ profile.first_name }}</li>
+                <li class="list-group-item"><strong>Last Name:</strong> {{ profile.last_name }}</li>
+                <li class="list-group-item"><strong>Date of Birth:</strong> {{ profile.date_of_birth|date:"F d, Y" }}</li>
+                <li class="list-group-item"><strong>Location:</strong> {{ profile.location }}</li>
+                <li class="list-group-item"><strong>Favorite Team:</strong> {{ profile.favorite_team }}</li>
+            </ul>
+
+            <!-- Edit Profile Button -->
+            {% if profile.user == request.user %}
+                <div class="text-center mt-3">
+                    <a href="{% url 'profile-edit' profile.pk %}" class="btn btn-primary">Edit Profile</a>
+                </div>
+            {% endif %}
+            
+            <!-- Delete Profile Button -->
+            {% if can_delete %}
+                <div class="text-center">
+                    <a href="{% url 'profile-delete' profile.pk %}" class="btn btn-danger mt-3">Delete Profile</a>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

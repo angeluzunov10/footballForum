@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'common/base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}Delete Profile{% endblock %}
 
-</body>
-</html>
+{% block content %}
+<div class="container mt-4">
+    <div class="card p-4 text-center">
+        <h2>Are you sure you want to delete your profile?</h2>
+        <p>This action cannot be undone. All associated user data will be permanently removed.</p>
+
+        <!-- Prefilled form -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-danger mt-3">Confirm Deletion</button>
+            <a href="{% url 'profile-details' pk=profile_pk %}" class="btn btn-secondary mt-3">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

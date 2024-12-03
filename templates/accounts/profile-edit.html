@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'common/base.html' %}
+{% block title %}Edit Profile{% endblock %}
+{% load crispy_forms_filters %}
+{% block content %}
+<div class="d-flex justify-content-center mt-5">
+    <div class="card p-4" style="width: 600px;">
+        <h2 class="text-center">Edit Your Profile</h2>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary w-100 mt-3">Save Changes</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
