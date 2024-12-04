@@ -27,7 +27,10 @@ SECRET_KEY = 'django-insecure-ss_u31or&3efa$g@us)g#ev1w0115u-b-^by+!#3qjj_51^f1h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+if DEBUG:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -134,8 +137,9 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 STATIC_URL = 'footballForum/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles/'
 STATICFILES_DIRS = (
-    BASE_DIR / 'static/',
+    BASE_DIR / 'static',
 )
 
 MEDIA_URL = 'static/images/'

@@ -1,9 +1,12 @@
 {% extends 'common/base.html' %}
 
 {% block title %}Welcome to Football Forum{% endblock %}
+{% load static %}
 
 {% block content %}
-<div class="homepage-background text-center d-flex align-items-center justify-content-center">
+<div 
+    class="homepage-background text-center d-flex align-items-center justify-content-center" 
+    style="background: url('{% static "images/football-stadium.jpg" %}') no-repeat center center/cover;">
     <div class="overlay">
         <h1 class="welcome-title">Welcome to The Ultimate Football Forum</h1>
         <p class="welcome-text">Join the discussion, share your thoughts and connect with other football enthusiasts.</p>
