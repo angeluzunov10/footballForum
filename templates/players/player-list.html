@@ -1,10 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'common/base.html' %}
+{% load static %}
+{% block title %}Players{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">All Players</h1>
+        
+        {% if can_create %}
+            <div class="mb-3 text-center">
+                <a href="{% url 'player-create' %}" class="btn btn-success">Create Player</a>
+            </div>
+        {% endif %}
+    
+        {% include 'common/search-bar.html' %}
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for player in players %}
+                <div class="col">
+                    <div class="card h-100">
+                        {% if player.player_picture %}
+                            <img src="{{ player.player_picture }}" class="card-img-top" alt="Player Image"
+                                 style="height: 200px; object-fit: contain;">
+                        {% else %}
+                            <img src="{% static 'images/player-default-logo.png' %}" alt="Default Profile Picture"
+                                 class="img-fluid rounded-circle mx-auto d-block mb-3" style="width: 150px;">
+                        {% endif %}
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ player.name }}</h5>
+                            <a href="{% url 'player-details' player.pk %}" class="btn btn-primary">View Details</a>
+
+                            {% if can_delete %}
+                                <a href="{% url 'player-delete' player.pk %}" class="btn btn-danger mt-2">Delete Player</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="empty-container">
+                    <p class="empty-message">No players! You can create one!</p>
+                    <a href="{% url 'player-create' %}" class="create-post-button">Create Player</a>
+                </div>            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Pagination -->
+    {% include 'common/pagination.html' %}
+{% endblock %}

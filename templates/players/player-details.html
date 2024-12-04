@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'common/base.html' %}
+{% load static %}
+{% block title %}{{ player.name }}{% endblock %}
 
-</body>
-</html>
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        {% if player.player_picture %}
+            <img src="{{ player.player_picture }}" class="card-img-top" alt="Player Image" style="height: 300px; object-fit: contain;">
+        {% else %}
+            <img src="{% static 'images/player-default-logo.png' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mx-auto d-block mb-3" style="width: 150px;">
+        {% endif %}
+        <div class="card-body">
+            <h1 class="card-title text-center">{{ player.name }}</h1>
+            <p>
+                <strong>Position:</strong> 
+                {% if player.position %}
+                    {{ player.position }}</p>
+                {% else %}
+                    N/A
+                {% endif %}
+            <p><strong>Team:</strong> 
+                {% if player.team %}
+                    {{ player.team.name }}
+                {% else %}
+                    Free Agent
+                {% endif %}
+            </p>
+        
+            {% if can_edit %}
+                <a href="{% url 'player-edit' player.pk %}" class="btn btn-warning mt-3">Edit Player</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
