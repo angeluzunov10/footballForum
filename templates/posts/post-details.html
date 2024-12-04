@@ -1,10 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'common/base.html' %}
+{% load crispy_forms_filters %}
 
-</body>
-</html>
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <img src="{{ post.image }}" class="card-img-top" alt="Post Image">
+        <div class="card-body">
+            <h1 class="card-title text-center">{{ post.title }}</h1>
+
+            <!-- Approval Button: Only for users who can approve posts -->
+            {% if not post.approved and can_approve %}
+                <div class="alert alert-warning text-center">
+                    <p class="mb-3">This post requires approval.</p>
+                    <a href="{% url 'approve' post.pk %}" class="btn btn-success">Approve Now</a>
+                </div>
+            {% endif %}
+        
+            <!-- Edit Button for Post Author -->
+            {% if request.user == post.author %}
+                <a href="{% url 'edit-post' post.pk %}" class="btn btn-warning mt-3">Edit Post</a>
+            {% endif %}
+        
+            <!-- Delete Button for Post Author, Redactor or Administrator -->
+            {% if can_delete_post %}
+                <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger mt-3">Delete Post</a>
+            {% endif %}
+
+            <p class="card-text mt-5">{{ post.content }}</p>
+
+            <p><strong>Tagged Players:</strong>
+                {% if post.tagged_players.exists %}
+                    {{ post.tagged_players.all|join:", " }}
+                {% else %}
+                    N/A
+                {% endif %}
+            </p>
+            <p><strong>Tagged Teams:</strong>
+                {% if post.tagged_teams.exists %}
+                    {{ post.tagged_teams.all|join:", " }}
+                {% else %}
+                    N/A
+                {% endif %}
+            </p>
+
+            <p><small>Posted by {{ post.author.username }} on {{ post.created_at }}</small></p>
+            <hr>
+
+            <!-- Likes, Shares, and Comments -->
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <!-- Like Button -->
+                <a href="{% url 'like' post.pk %}" class="btn {% if is_liked %}btn-danger{% else %}btn-outline-danger{% endif %}">
+                    {% if is_liked %}
+                        Unlike
+                    {% else %}
+                        Like
+                    {% endif %}
+                </a>
+                <span class="ms-2">{{ likes_count }} Likes</span>
+
+                <!-- Share Button -->
+                <button class="btn btn-outline-info ms-3" onclick="copyToClipboard('{{ request.build_absolute_uri }}')">
+                    Share
+                </button>
+                <span id="share-message" class="ms-2 text-success" style="display: none;">Copied!</span>
+            </div>
+
+            <hr>
+
+            <!-- Comments Section -->
+            <h3 class="text-center">Comments</h3>
+            <ul class="list-group mb-3">
+                {% for comment in comments %}
+                <li class="list-group-item">
+                    <strong>{{ comment.user.username }}</strong>: {{ comment.content }}
+                    <small class="text-muted d-block">Posted on {{ comment.created_at }}</small>
+                </li>
+
+                    <!-- Inline Delete Button -->
+                    {% if user == comment.user or can_delete_comment %}
+                        <form method="post" action="{% url 'delete-comment' comment.pk %}" style="margin: 5px;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Comment">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+                    {% endif %}
+                    
+                {% empty %}
+                <li class="list-group-item text-center">No comments yet. Be the first to comment!</li>
+                {% endfor %}
+            </ul>
+
+            <!-- Add Comment Form -->
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'comment' post.pk %}">
+                    {% csrf_token %}
+                    {{ comment_form|crispy }}
+                    <button type="submit" class="btn btn-success">Add Comment</button>
+                </form>
+            {% else %}
+                <p><a href="{% url 'login' %}">Login</a> to leave a comment.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function copyToClipboard(text) {
+        // Create a temporary input to hold the text
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+
+        // Select and copy the text
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); // For mobile devices
+        document.execCommand('copy');
+
+        // Remove the temporary input
+        document.body.removeChild(tempInput);
+
+        // Show confirmation message
+        const message = document.getElementById('share-message');
+        message.style.display = 'inline';
+        setTimeout(() => {
+            message.style.display = 'none';
+        }, 2000); // Hide message after 2 seconds
+    }
+</script>
+{% endblock %}
