@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'common/base.html' %}
+{% load static %}
+{% block title %}Teams{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">All Teams</h1>
+
+        {% if can_create %}
+            <div class="mb-3 text-center">
+                <a href="{% url 'team-create' %}" class="btn btn-success">Create Team</a>
+            </div>
+        {% endif %}
+    
+        {% include 'common/search-bar.html' %}
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for team in teams %}
+                <div class="col">
+                    <div class="card h-100">
+                        {% if team.logo %}
+                            <img src="{{ team.logo }}" class="card-img-top" alt="Team Logo"
+                                 style="height: 200px; object-fit: contain;">
+                        {% else %}
+                            <img src="{% static 'images/team-default-logo.png' %}" alt="Default Profile Picture"
+                                 class="img-fluid rounded-circle mx-auto d-block mb-3" style="width: 150px;">
+                        {% endif %}
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ team.name }}</h5>
+                            <a href="{% url 'team-details' team.pk %}" class="btn btn-primary">View Details</a>
+
+                            {% if can_delete %}
+                                <a href="{% url 'team-delete' team.pk %}" class="btn btn-danger mt-2">Delete Team</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            
+            {% endfor %}
+        </div>
+        {% if not teams %}
+                <div class="empty-container">
+                    <p class="empty-message">No teams! You can create one!</p>
+                    <a href="{% url 'team-create' %}" class="create-post-button">Create Team</a>
+                </div>
+        {% endif %}
+            
+    </div>
+    
+    <!-- Pagination -->
+    {% include 'common/pagination.html' %}
+{% endblock %}
