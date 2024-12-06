@@ -46,5 +46,14 @@ class Profile(models.Model):
         null=True,
     )
 
+    def save(self, *args, **kwargs):
+        # Sync first_name and last_name with the associated user model
+        if self.user:
+            self.user.first_name = self.first_name
+            self.user.last_name = self.last_name
+            self.user.save()
+
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return f"{self.user.username}'s Profile"

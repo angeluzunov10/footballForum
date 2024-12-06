@@ -17,10 +17,25 @@ class AppUser(AbstractUser, PermissionsMixin):
 
     is_staff = models.BooleanField(default=False)
 
+    login_count = models.PositiveIntegerField(default=0)
+    loyal_user = models.BooleanField(
+        default=False,
+        editable=False
+    )
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
     objects = AppUserManager()
+
+    def save(self, *args, **kwargs):
+        if self.is_superuser:
+            self.loyal_user = True
+        else:
+            if self.login_count >= 10:
+                self.loyal_user = True
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.username or self.email
