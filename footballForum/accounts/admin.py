@@ -16,18 +16,28 @@ class AppUserAdmin(UserAdmin):
 
     form = AppUserChangeForm
 
-    list_display = ('pk', 'email', 'is_staff', 'is_superuser', 'date_joined', 'last_login')
+    list_display = (
+        'pk',
+        'email',
+        'is_staff',
+        'is_superuser',
+        'date_joined',
+        'last_login',
+        'loyal_user'
+    )
 
     search_fields = ('email',)
 
     ordering = ('pk',)
 
     fieldsets = (
-        (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'groups', 'user_permissions')}),
+        ('Credentials', {'fields': ('email', 'password')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'login_count', 'loyal_user')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'groups',)}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
+
+    readonly_fields = ('login_count',)
 
     add_fieldsets = (
         (
@@ -49,5 +59,6 @@ class ProfileAdmin(admin.ModelAdmin):
     ordering = ('pk',)
 
     fieldsets = (
-        ('Personal info', {'fields': ('first_name', 'last_name', 'date_of_birth', 'location', 'profile_picture')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'date_of_birth',)}),
+        ('Other info', {'fields': ('location', 'profile_picture')})
     )
