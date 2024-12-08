@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "footballForum.posts.apps.PostsConfig",
     "footballForum.teams.apps.TeamsConfig",
     "footballForum.common.apps.CommonConfig",
-    "footballForum.accounts.apps.AccountsConfig"
+    "footballForum.accounts.apps.AccountsConfig",
     "crispy_forms",
     "crispy_bootstrap5"
 ]
