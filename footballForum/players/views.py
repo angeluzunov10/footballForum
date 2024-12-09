@@ -24,8 +24,8 @@ class PlayerListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['query'] = self.request.GET.get('query')
-        context['can_delete'] = self.request.user.has_perm('player.delete_player')
-        context['can_create'] = self.request.user.has_perm('player.add_player')
+        context['can_delete'] = self.request.user.has_perm('players.delete_player')
+        context['can_create'] = self.request.user.has_perm('players.add_player')
         context['list_name'] = self.model._meta.verbose_name_plural.capitalize()  # Add verbose name
 
         return context
@@ -38,7 +38,7 @@ class PlayerDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['can_edit'] = self.request.user.has_perm('player.edit_player')
+        context['can_edit'] = self.request.user.has_perm('players.change_player')
 
         return context
 
@@ -50,7 +50,7 @@ class PlayerCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     success_url = reverse_lazy('player-list')
 
     def test_func(self):
-        return self.request.user.has_perm('player.create_player')
+        return self.request.user.has_perm('players.add_player')
 
 
 class PlayerEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -60,7 +60,7 @@ class PlayerEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     success_url = reverse_lazy('player-list')
 
     def test_func(self):
-        return self.request.user.has_perm('player.change_player')
+        return self.request.user.has_perm('players.change_player')
 
 
 class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

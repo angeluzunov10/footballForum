@@ -1,0 +1,237 @@
+/* Home page background styling */
+.homepage-background {
+    height: calc(100vh - 126px); /* Full height minus the navbar and footer height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay for better readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.welcome-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.welcome-text {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Posts cards styling */
+.card {
+    max-width: 600px; /* Restrict card width for consistent layout */
+    margin: auto; /* Center the card on the page */
+    overflow: visible; /* Allow content to expand dynamically */
+}
+
+.card-img-top {
+    height: 200px; /* Uniform image height */
+    object-fit: cover; /* Ensures images fit nicely without distortion */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px; /* Add padding for better spacing */
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.pagination .page-link:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #aaa;
+    background-color: #e9ecef;
+    border-color: #ddd;
+}
+
+/* Sticky footer */
+html, body {
+    height: 100%; /* Ensure the entire viewport is filled */
+    margin: 0;    /* Remove default margins */
+    padding: 0;   /* Remove default paddings */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Flex layout to stack elements vertically */
+    min-height: 100vh;      /* Full height of the viewport */
+}
+
+main {
+    flex-grow: 1; /* Let the main content grow and fill available space */
+}
+
+footer {
+    background-color: #343a40; /* Footer background color */
+    color: #fff;               /* Footer text color */
+    padding: 1rem 0;           /* Footer padding for spacing */
+}
+
+/* Form styling */
+form {
+    width: 100%; /* Ensure the form fits its container */
+    max-width: 100%; /* Prevent the form from overflowing */
+    margin: 0 auto; /* Center the form within its container */
+}
+
+form .form-control {
+    width: 100%; /* Ensure inputs and textareas span the full width of their container */
+    box-sizing: border-box; /* Include padding and border in element width */
+    margin-bottom: 1rem; /* Add spacing between fields */
+}
+
+form button {
+    width: 100%; /* Make the submit button span the full width */
+    padding: 0.75rem; /* Increase padding for better click area */
+    font-size: 1rem; /* Ensure text fits well */
+}
+
+/* Message for share button */
+#share-message {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #28a745; /* Success green */
+}
+
+/* Edit button styling */
+.btn-warning {
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+/* Search bar styling */
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: transparent; /* Transparent background */
+}
+
+.search-bar-container form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-bar-container input {
+    flex: 3;
+    height: 50px;
+    border: none;
+    padding: 0 20px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.search-bar-container input:focus {
+    outline: none;
+}
+
+.search-bar-container button {
+    flex: 1;
+    height: 50px;
+    border: none;
+    font-size: 1rem;
+    background: rgba(0, 123, 255, 0.8);
+    color: white;
+    cursor: pointer;
+}
+
+.search-bar-container button:hover {
+    background: rgba(0, 92, 191, 0.8);
+}
+
+/* Empty page styling */
+.empty-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Takes up the full height of the viewport */
+    text-align: center;
+    margin: 0 auto; /* Ensure the content stays centered horizontally */
+    width: 100%; /* Makes sure it spans the full width */
+}
+
+.empty-message {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.create-post-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.create-post-button:hover {
+    background-color: #0056b3;
+}
+
+/* 404 Page Styling */
+.error-template {
+    padding: 40px 15px;
+}
+
+.error-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.error-actions {
+    margin-top: 20px;
+}

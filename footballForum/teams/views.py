@@ -24,8 +24,8 @@ class TeamListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['query'] = self.request.GET.get('query')
-        context['can_create'] = self.request.user.has_perm('team.create_team')
-        context['can_delete'] = self.request.user.has_perm('team.delete_team')
+        context['can_create'] = self.request.user.has_perm('teams.add_team')
+        context['can_delete'] = self.request.user.has_perm('teams.delete_team')
         context['list_name'] = self.model._meta.verbose_name_plural.capitalize()  # Add verbose name
 
         return context
@@ -38,7 +38,7 @@ class TeamDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['can_edit'] = self.request.user.has_perm('team.change_team')
+        context['can_edit'] = self.request.user.has_perm('teams.change_team')
 
         return context
 
@@ -50,7 +50,7 @@ class TeamCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     success_url = reverse_lazy('team-list')
 
     def test_func(self):
-        return self.request.user.has_perm('team.add_team')
+        return self.request.user.has_perm('teams.add_team')
 
 
 class TeamEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -60,7 +60,7 @@ class TeamEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     success_url = reverse_lazy('team-list')
 
     def test_func(self):
-        return self.request.user.has_perm('team.edit_team')
+        return self.request.user.has_perm('teams.change_team')
 
 
 class TeamDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -69,4 +69,4 @@ class TeamDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = reverse_lazy('team-list')
 
     def test_func(self):
-        return self.request.user.has_perm('team.delete_team')
+        return self.request.user.has_perm('teams.delete_team')

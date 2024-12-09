@@ -90,7 +90,7 @@ class DetailsPostView(DetailView):
             post.author == self.request.user or
             self.request.user.has_perm('posts.delete_post')
         )
-        context['can_delete_comment'] = self.request.user.has_perm('comment.delete_comment')
+        context['can_delete_comment'] = self.request.user.has_perm('common.delete_comment')
 
         return context
 

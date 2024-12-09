@@ -63,7 +63,7 @@ class DeleteCommentView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
         # Readers can delete their own comments
         # Redactors and Administrators can delete any comment
-        return comment.user == self.request.user or self.request.user.has_perm('comment.delete_comment')
+        return comment.user == self.request.user or self.request.user.has_perm('common.delete_comment')
 
     def get_success_url(self):
         return reverse_lazy('post-details', kwargs={'pk': self.object.to_post.pk})
