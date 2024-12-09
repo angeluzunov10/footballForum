@@ -114,6 +114,16 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
         )
 
     def form_valid(self, form):
-        messages.success(self.request, f"Your profile was updated successfully!")
+        profile = form.save()
+
+        # Update related user model fields
+        user = profile.user
+        user.first_name = profile.first_name
+        user.last_name = profile.last_name
+        if 'username' in form.cleaned_data:
+            user.username = form.cleaned_data['username']
+        user.save()
+
+        messages.success(self.request, "Your profile was updated successfully!")
 
         return super().form_valid(form)

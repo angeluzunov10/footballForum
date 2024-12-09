@@ -41,7 +41,7 @@ class AppUser(AbstractUser, PermissionsMixin):
     objects = AppUserManager()
 
     def save(self, *args, **kwargs):
-        if self.is_superuser:
+        if self.is_superuser or self.is_staff:
             self.loyal_user = True
         else:
             if self.login_count >= 10:
