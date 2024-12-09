@@ -12,6 +12,8 @@
         <p class="welcome-text">Join the discussion, share your thoughts and connect with other football enthusiasts.</p>
         {% if user.is_authenticated %}
             <a href="{% url 'post-list' %}" class="btn btn-primary mt-3">Explore Posts</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-primary mt-3">Login to explore!</a>
         {% endif %}
     </div>
 </div>
