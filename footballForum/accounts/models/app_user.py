@@ -13,6 +13,18 @@ class AppUser(AbstractUser, PermissionsMixin):
         blank=True,
     )
 
+    first_name = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True,
+    )
+
+    last_name = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True,
+    )
+
     is_active = models.BooleanField(default=True)
 
     is_staff = models.BooleanField(default=False)
