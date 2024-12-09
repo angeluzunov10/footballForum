@@ -6,7 +6,7 @@ from .forms import TeamBaseForm
 from .models import Team
 
 
-class TeamListView(ListView):
+class TeamListView(LoginRequiredMixin, ListView):
     model = Team
     template_name = 'teams/teams-list.html'
     context_object_name = 'teams'
@@ -31,7 +31,7 @@ class TeamListView(ListView):
         return context
 
 
-class TeamDetailView(DetailView):
+class TeamDetailView(LoginRequiredMixin, DetailView):
     model = Team
     template_name = 'teams/team-details.html'
     context_object_name = 'team'

@@ -13,7 +13,7 @@ from ..common.models import Comment, Like
 UserModel = get_user_model()
 
 
-class PostListView(ListView):
+class PostListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'posts/posts-list.html'
     context_object_name = 'posts'
@@ -64,7 +64,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class DetailsPostView(DetailView):
+class DetailsPostView(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'posts/post-details.html'
     context_object_name = 'post'

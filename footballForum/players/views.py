@@ -6,7 +6,7 @@ from .forms import PlayerBaseForm
 from .models import Player
 
 
-class PlayerListView(ListView):
+class PlayerListView(LoginRequiredMixin, ListView):
     model = Player
     template_name = 'players/player-list.html'
     context_object_name = 'players'
@@ -31,7 +31,7 @@ class PlayerListView(ListView):
         return context
 
 
-class PlayerDetailView(DetailView):
+class PlayerDetailView(LoginRequiredMixin, DetailView):
     model = Player
     template_name = 'players/player-details.html'
     context_object_name = 'player'
