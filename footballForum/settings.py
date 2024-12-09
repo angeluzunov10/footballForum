@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'footballForum.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "football_forum_db",
+        "NAME": "football_forum_database",
         "USER": "postgres",
         "PASSWORD": "102030",
         "HOST": "127.0.0.1",
