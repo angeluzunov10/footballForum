@@ -56,9 +56,12 @@ class CreatePostView(LoginRequiredMixin, CreateView):
         # Save the post instance and handle many-to-many fields in the form
         response = super().form_valid(form)
 
+        if self.request.user.has_perm('posts.approve_post'):
+            form.instance.approved = True
+
         # Add a success message
         messages.success(self.request, f"Post '{form.instance.title}' was created successfully.")
-        return response
+        return super().form_valid(form)
 
 
 class DetailsPostView(DetailView):
