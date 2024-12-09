@@ -37,7 +37,7 @@ class AppUserAdmin(UserAdmin):
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
 
-    readonly_fields = ('login_count',)
+    readonly_fields = ('login_count', 'loyal_user',)
 
     add_fieldsets = (
         (

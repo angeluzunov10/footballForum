@@ -16,7 +16,7 @@ class PostAdmin(admin.ModelAdmin):
         'approved',
     )
 
-    search_fields = ('author', 'content')
+    search_fields = ('author__username', 'author__email', 'title')
 
     ordering = ('pk',)
 
