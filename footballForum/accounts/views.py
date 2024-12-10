@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, FormView, DetailView
@@ -18,6 +19,12 @@ class AppUserRegisterView(CreateView):
     template_name = 'accounts/register.html'
     success_url = reverse_lazy('home')
 
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('home')  # Redirect to the home page
+
+        return super().dispatch(request, *args, **kwargs)
+
     def form_valid(self, form):     # to keep the user logged in
         response = super().form_valid(form)
 
@@ -29,6 +36,12 @@ class AppUserRegisterView(CreateView):
 
 class AppUserLoginView(LoginView):
     template_name = 'accounts/login.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('home')  # Redirect to the home page
+
+        return super().dispatch(request, *args, **kwargs)
 
 
 class ProfileDetailsView(LoginRequiredMixin, DetailView):
@@ -90,8 +103,7 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
         profile = super().get_object(queryset)
 
         if self.request.user != profile.user:
-            messages.error(self.request, "You are not allowed to edit others' profiles!")
-            return redirect('profile-details', pk=self.request.user.pk)
+            raise PermissionDenied()
         return profile
 
     def get_form_kwargs(self):
