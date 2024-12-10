@@ -19,11 +19,11 @@
                 <div class="col">
                     <div class="card h-100">
                         {% if player.player_picture %}
-                            <img src="{{ player.player_picture }}" class="card-img-top" alt="Player Image"
-                                 style="height: 200px; object-fit: contain;">
+                            <img src="{{ player.player_picture }}" alt="Player Image"
+                                 class="img-fluid rounded-circle mx-auto d-block mb-3" style="margin-top: 10px; width: 150px; height: 150px;">
                         {% else %}
                             <img src="{% static 'images/player-default-logo.png' %}" alt="Default Profile Picture"
-                                 class="img-fluid rounded-circle mx-auto d-block mb-3" style="width: 150px;">
+                                 class="img-fluid rounded-circle mx-auto d-block mb-3" style="margin-top: 10px; width: 150px; height: 150px;">
                         {% endif %}
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ player.name }}</h5>

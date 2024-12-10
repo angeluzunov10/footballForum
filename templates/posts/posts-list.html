@@ -14,8 +14,11 @@
                     <div class="card h-100">
                         <img src="{{ post.image }}" class="card-img-top" alt="Post Image" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">
+                            <h5 class="card-title align-center">
                                 {{ post.title }}
+                                {% if not post.approved %}
+                                    <a style="color: red; font-size: 0.9rem; margin-top: 5px;">[Need approval]</a>
+                                {% endif %}
                             </h5>
                             <p class="card-text">
                                 {{ post.content|truncatewords:15 }}
