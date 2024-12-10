@@ -69,4 +69,4 @@ class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = reverse_lazy('player-list')
 
     def test_func(self):
-        return self.request.user.has_perm('player.delete_player')
+        return self.request.user.has_perm('players.delete_player')

@@ -1,5 +1,6 @@
 from copy import copy
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect, resolve_url, get_object_or_404
 from django.urls import reverse_lazy
@@ -16,6 +17,7 @@ class HomePageView(TemplateView):
     template_name = 'common/home-page.html'
 
 
+@login_required
 def likes_functionality(request, post_id):
 
     post = get_object_or_404(Post, pk=post_id)
@@ -34,12 +36,14 @@ def likes_functionality(request, post_id):
     return redirect(request.META.get('HTTP_REFERER') + f'#{post_id}')
 
 
+@login_required
 def share_functionality(request, post_id):
     copy(request.META.get('HTTP_HOST') + resolve_url('post-details', post_id))
 
     return redirect(request.META.get('HTTP_REFERER') + f'#{post_id}')
 
 
+@login_required
 def comment_functionality(request, post_id):
     if request.method == 'POST':
         post = get_object_or_404(Post, pk=post_id)
