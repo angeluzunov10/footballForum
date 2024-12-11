@@ -24,9 +24,12 @@ class PostListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         queryset = self.model.objects.all()
 
-        if not self.request.user.has_perm('posts.approve_post'):       # showing only approved posts
+        if self.request.user.has_perm('posts.approve_post'):
+            # If the user has permission, unapproved posts are listed first
+            queryset = queryset.order_by('approved', '-created_at')
+        else:
+            # Only show approved posts for users without the permission
             queryset = queryset.filter(approved=True)
-
         # Search functionality
         query = self.request.GET.get('query')
         if query:

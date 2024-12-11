@@ -10,7 +10,7 @@ class TeamListView(LoginRequiredMixin, ListView):
     model = Team
     template_name = 'teams/teams-list.html'
     context_object_name = 'teams'
-    paginate_by = 6
+    paginate_by = 10
 
     def get_queryset(self):
         queryset = self.model.objects.all()

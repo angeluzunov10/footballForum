@@ -10,7 +10,7 @@ class PlayerListView(LoginRequiredMixin, ListView):
     model = Player
     template_name = 'players/player-list.html'
     context_object_name = 'players'
-    paginate_by = 6
+    paginate_by = 10
 
     def get_queryset(self):
         queryset = self.model.objects.all()
