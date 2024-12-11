@@ -29,7 +29,7 @@ class AppUser(AbstractUser, PermissionsMixin):
 
     is_staff = models.BooleanField(default=False)
 
-    login_count = models.PositiveIntegerField(default=0)
+    login_count = models.PositiveIntegerField(default=0)        # new fields for extending User model
     loyal_user = models.BooleanField(
         default=False,
         editable=False

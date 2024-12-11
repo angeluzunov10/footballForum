@@ -36,13 +36,32 @@ class PostBaseForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if self.instance.pk:  # If editing an existing post
+        if self.instance.pk:  # prefilling the teams and players if edit an existing post
             self.fields['player_names'].initial = ', '.join(
                 player.name for player in self.instance.tagged_players.all()
             )
             self.fields['team_names'].initial = ', '.join(
                 team.name for team in self.instance.tagged_teams.all()
             )
+
+    def handle_tagging(self, tag_field_name, model, relation_field, post_instance):
+        tag_names = self.cleaned_data.get(tag_field_name, '')
+
+        if not tag_names:  # If the field is empty, clear the related field
+            getattr(post_instance, relation_field).clear()
+            return
+
+        tag_names = [name.strip() for name in tag_names.split(',') if name.strip()]
+        unique_tag_names = list(set(tag_names))  # Remove duplicates in input
+
+        # Fetch existing tags and add only non-existing ones
+        tags_to_set = []
+        for name in unique_tag_names:
+            tag, _ = model.objects.get_or_create(name=name)
+            tags_to_set.append(tag)
+
+        # Replace existing tags with the new list of tags
+        getattr(post_instance, relation_field).set(tags_to_set)
 
     def save(self, commit=True):
         post = super().save(commit=False)
@@ -51,25 +70,10 @@ class PostBaseForm(forms.ModelForm):
             post.save()
 
         # Handle tagged players
-        player_names = self.cleaned_data.get('player_names', '')
-
-        if player_names:
-            player_names = [name.strip() for name in player_names.split(',') if name.strip()]
-            player_names = list(set(player_names))  # Remove duplicates
-            for name in player_names:
-                player, _ = Player.objects.get_or_create(name=name)
-                post.tagged_players.add(player)
+        self.handle_tagging('player_names', Player, 'tagged_players', post)
 
         # Handle tagged teams
-        team_names = self.cleaned_data.get('team_names', '')
-
-        if team_names:
-            post.tagged_teams.clear()  # Clear existing teams to avoid duplication
-            team_names = [name.strip() for name in team_names.split(',') if name.strip()]
-            team_names = list(set(team_names))  # Remove duplicates
-            for name in team_names:
-                team, _ = Team.objects.get_or_create(name=name)
-                post.tagged_teams.add(team)
+        self.handle_tagging('team_names', Team, 'tagged_teams', post)
 
         return post
 

@@ -12,7 +12,7 @@ class PlayerListView(LoginRequiredMixin, ListView):
     context_object_name = 'players'
     paginate_by = 10
 
-    def get_queryset(self):
+    def get_queryset(self):     # for the search bar
         queryset = self.model.objects.all()
         query = self.request.GET.get('query')
 
