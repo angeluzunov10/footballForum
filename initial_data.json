@@ -1,0 +1,1532 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "players",
+    "model": "player"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "posts",
+    "model": "post"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "teams",
+    "model": "team"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "common",
+    "model": "comment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "common",
+    "model": "like"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "accounts",
+    "model": "appuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "accounts",
+    "model": "profile"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wppvnnfkfn8h5y3bha27twvkw1hv7zub",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHSmfJw6d5vIAMDUjWQlHZl_HfbpAvdnnPufQtP61L82tPsJxYXMYrTLwsUn6nugh9U703GVpd5CnJP5GG7vDVOr-vR_h0U6mVbk0XrtB1Rcc7aJOYwZAU44MYtQuDoRmPPKYLNLhMCMJJWLkFW0Wjx-QLY7Tee:1tLKHF:fWo4Rjv6IyIhQjBQdq7BwVFhKc38trJyDefkuFlJruo",
+    "expire_date": "2024-12-25T10:49:09.503Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 1,
+  "fields": {
+    "name": "Lionel Messi",
+    "position": "ST",
+    "team": null,
+    "player_picture": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTT7vjKd30hc083SDHDxLOvAST3MX1tBkNvg2-PxDAzns5qRi3vJIEc459b6cNiH0EIVEFogJPjuJQVnNw"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 2,
+  "fields": {
+    "name": "Trent Alexander-Arnold",
+    "position": "MID",
+    "team": 5,
+    "player_picture": "https://backend.liverpoolfc.com/sites/default/files/styles/xl/public/2024-11/trent-alexander-arnold-101124.jpg?itok=uOkUYzPq"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 3,
+  "fields": {
+    "name": "Alphonso Davies",
+    "position": "DEF",
+    "team": 6,
+    "player_picture": "https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_1:1,c_fill,g_custom,w_768/v1656615722/cms/public/images/fcbayern-com/players/spielerportraits/ganzkoerper/alphonso_davies.png"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 4,
+  "fields": {
+    "name": "Cristiano Ronaldo",
+    "position": "ST",
+    "team": null,
+    "player_picture": "https://www.playmakerstats.com/img/jogadores/new/15/79/1579_cristiano_ronaldo_20241125221757.png"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 5,
+  "fields": {
+    "name": "Arjen Robben",
+    "position": "MID",
+    "team": null,
+    "player_picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Arjen_Robben_v_Shakhtar_2015_%28cropped%29.jpg/330px-Arjen_Robben_v_Shakhtar_2015_%28cropped%29.jpg"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 6,
+  "fields": {
+    "name": "Georgi Liskov",
+    "position": "",
+    "team": null,
+    "player_picture": null
+  }
+},
+{
+  "model": "players.player",
+  "pk": 7,
+  "fields": {
+    "name": "Angel Uzunov",
+    "position": "",
+    "team": null,
+    "player_picture": null
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 3,
+  "fields": {
+    "name": "Barcelona",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/640px-FC_Barcelona_%28crest%29.svg.png",
+    "stadium": "Nou Camp",
+    "foundation_year": 1899
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 4,
+  "fields": {
+    "name": "Real Madrid",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png",
+    "stadium": "Santiago Bernabeu",
+    "foundation_year": 1902
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 5,
+  "fields": {
+    "name": "Liverpool",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/640px-Liverpool_FC.svg.png",
+    "stadium": "Anfield",
+    "foundation_year": 1892
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 6,
+  "fields": {
+    "name": "Bayern Munich",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/FC_Bayern_M%C3%BCnchen_logo_%282024%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282024%29.svg.png",
+    "stadium": "Alianz Arena",
+    "foundation_year": 1900
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 7,
+  "fields": {
+    "name": "Levski - Sofia",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/L_Levski_Sofia.svg/180px-L_Levski_Sofia.svg.png",
+    "stadium": "Georgi Asparuhov Stadium",
+    "foundation_year": 1914
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 8,
+  "fields": {
+    "name": "CSKA - Sofia",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/1/1d/CSKA_Sofia_Logo_2020.png",
+    "stadium": "Bulgarian Army Stadium",
+    "foundation_year": 1948
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 9,
+  "fields": {
+    "name": "Maritsa - Belovo",
+    "logo": "",
+    "stadium": "",
+    "foundation_year": null
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 10,
+  "fields": {
+    "name": "Oborishte - Panagyurishte II",
+    "logo": "https://fkoborishte.com/wp-content/uploads/2023/07/10286.png",
+    "stadium": "Orcho Voyvoda",
+    "foundation_year": 1925
+  }
+},
+{
+  "model": "teams.team",
+  "pk": 11,
+  "fields": {
+    "name": "Borussia Dortmund",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/800px-Borussia_Dortmund_logo.svg.png",
+    "stadium": "Signal Iduna Park",
+    "foundation_year": 1909
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add player",
+    "content_type": [
+      "players",
+      "player"
+    ],
+    "codename": "add_player"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change player",
+    "content_type": [
+      "players",
+      "player"
+    ],
+    "codename": "change_player"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete player",
+    "content_type": [
+      "players",
+      "player"
+    ],
+    "codename": "delete_player"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view player",
+    "content_type": [
+      "players",
+      "player"
+    ],
+    "codename": "view_player"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add post",
+    "content_type": [
+      "posts",
+      "post"
+    ],
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change post",
+    "content_type": [
+      "posts",
+      "post"
+    ],
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete post",
+    "content_type": [
+      "posts",
+      "post"
+    ],
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view post",
+    "content_type": [
+      "posts",
+      "post"
+    ],
+    "codename": "view_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can approve posts",
+    "content_type": [
+      "posts",
+      "post"
+    ],
+    "codename": "approve_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add team",
+    "content_type": [
+      "teams",
+      "team"
+    ],
+    "codename": "add_team"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change team",
+    "content_type": [
+      "teams",
+      "team"
+    ],
+    "codename": "change_team"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete team",
+    "content_type": [
+      "teams",
+      "team"
+    ],
+    "codename": "delete_team"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view team",
+    "content_type": [
+      "teams",
+      "team"
+    ],
+    "codename": "view_team"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add comment",
+    "content_type": [
+      "common",
+      "comment"
+    ],
+    "codename": "add_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change comment",
+    "content_type": [
+      "common",
+      "comment"
+    ],
+    "codename": "change_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete comment",
+    "content_type": [
+      "common",
+      "comment"
+    ],
+    "codename": "delete_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view comment",
+    "content_type": [
+      "common",
+      "comment"
+    ],
+    "codename": "view_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add like",
+    "content_type": [
+      "common",
+      "like"
+    ],
+    "codename": "add_like"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change like",
+    "content_type": [
+      "common",
+      "like"
+    ],
+    "codename": "change_like"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete like",
+    "content_type": [
+      "common",
+      "like"
+    ],
+    "codename": "delete_like"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view like",
+    "content_type": [
+      "common",
+      "like"
+    ],
+    "codename": "view_like"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "accounts",
+      "appuser"
+    ],
+    "codename": "add_appuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "accounts",
+      "appuser"
+    ],
+    "codename": "change_appuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "accounts",
+      "appuser"
+    ],
+    "codename": "delete_appuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "accounts",
+      "appuser"
+    ],
+    "codename": "view_appuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add profile",
+    "content_type": [
+      "accounts",
+      "profile"
+    ],
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change profile",
+    "content_type": [
+      "accounts",
+      "profile"
+    ],
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete profile",
+    "content_type": [
+      "accounts",
+      "profile"
+    ],
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view profile",
+    "content_type": [
+      "accounts",
+      "profile"
+    ],
+    "codename": "view_profile"
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "Administrators",
+    "permissions": [
+      [
+        "add_appuser",
+        "accounts",
+        "appuser"
+      ],
+      [
+        "change_appuser",
+        "accounts",
+        "appuser"
+      ],
+      [
+        "delete_appuser",
+        "accounts",
+        "appuser"
+      ],
+      [
+        "view_appuser",
+        "accounts",
+        "appuser"
+      ],
+      [
+        "add_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "change_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "delete_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "view_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "add_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "change_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "delete_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "view_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "add_group",
+        "auth",
+        "group"
+      ],
+      [
+        "change_group",
+        "auth",
+        "group"
+      ],
+      [
+        "delete_group",
+        "auth",
+        "group"
+      ],
+      [
+        "view_group",
+        "auth",
+        "group"
+      ],
+      [
+        "add_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "change_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "delete_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "view_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "add_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "change_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "delete_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "view_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "add_like",
+        "common",
+        "like"
+      ],
+      [
+        "change_like",
+        "common",
+        "like"
+      ],
+      [
+        "delete_like",
+        "common",
+        "like"
+      ],
+      [
+        "view_like",
+        "common",
+        "like"
+      ],
+      [
+        "add_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "change_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "delete_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "view_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "add_player",
+        "players",
+        "player"
+      ],
+      [
+        "change_player",
+        "players",
+        "player"
+      ],
+      [
+        "delete_player",
+        "players",
+        "player"
+      ],
+      [
+        "view_player",
+        "players",
+        "player"
+      ],
+      [
+        "add_post",
+        "posts",
+        "post"
+      ],
+      [
+        "approve_post",
+        "posts",
+        "post"
+      ],
+      [
+        "change_post",
+        "posts",
+        "post"
+      ],
+      [
+        "delete_post",
+        "posts",
+        "post"
+      ],
+      [
+        "view_post",
+        "posts",
+        "post"
+      ],
+      [
+        "add_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "change_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "delete_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "view_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "add_team",
+        "teams",
+        "team"
+      ],
+      [
+        "change_team",
+        "teams",
+        "team"
+      ],
+      [
+        "delete_team",
+        "teams",
+        "team"
+      ],
+      [
+        "view_team",
+        "teams",
+        "team"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "Readers",
+    "permissions": [
+      [
+        "view_appuser",
+        "accounts",
+        "appuser"
+      ],
+      [
+        "view_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "view_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "view_like",
+        "common",
+        "like"
+      ],
+      [
+        "view_post",
+        "posts",
+        "post"
+      ],
+      [
+        "view_team",
+        "teams",
+        "team"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "Redactors",
+    "permissions": [
+      [
+        "view_appuser",
+        "accounts",
+        "appuser"
+      ],
+      [
+        "add_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "change_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "delete_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "view_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "add_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "change_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "delete_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "view_comment",
+        "common",
+        "comment"
+      ],
+      [
+        "add_like",
+        "common",
+        "like"
+      ],
+      [
+        "change_like",
+        "common",
+        "like"
+      ],
+      [
+        "delete_like",
+        "common",
+        "like"
+      ],
+      [
+        "view_like",
+        "common",
+        "like"
+      ],
+      [
+        "add_player",
+        "players",
+        "player"
+      ],
+      [
+        "change_player",
+        "players",
+        "player"
+      ],
+      [
+        "delete_player",
+        "players",
+        "player"
+      ],
+      [
+        "view_player",
+        "players",
+        "player"
+      ],
+      [
+        "add_post",
+        "posts",
+        "post"
+      ],
+      [
+        "approve_post",
+        "posts",
+        "post"
+      ],
+      [
+        "change_post",
+        "posts",
+        "post"
+      ],
+      [
+        "delete_post",
+        "posts",
+        "post"
+      ],
+      [
+        "view_post",
+        "posts",
+        "post"
+      ],
+      [
+        "add_team",
+        "teams",
+        "team"
+      ],
+      [
+        "change_team",
+        "teams",
+        "team"
+      ],
+      [
+        "delete_team",
+        "teams",
+        "team"
+      ],
+      [
+        "view_team",
+        "teams",
+        "team"
+      ]
+    ]
+  }
+},
+{
+  "model": "accounts.appuser",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$MXgZJQwktkPbPjAuKW7TUJ$7sn0vTLSJ/twB2+ziyKyOhgqECSHayYec69HKHcTEIM=",
+    "last_login": "2024-12-11T09:04:12.047Z",
+    "is_superuser": true,
+    "date_joined": "2024-12-09T13:45:49.060Z",
+    "email": "admin@admin.com",
+    "username": null,
+    "first_name": null,
+    "last_name": null,
+    "is_active": true,
+    "is_staff": true,
+    "login_count": 5,
+    "loyal_user": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.appuser",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$XwkooMERqh2o3QdxRi145f$2qPXRs8QUu6qRUwyL9OFzMexRCrPKcNMPJKn86hn6Rc=",
+    "last_login": "2024-12-11T10:49:09.500Z",
+    "is_superuser": false,
+    "date_joined": "2024-12-09T13:47:05Z",
+    "email": "angel_d_u@abv.bg",
+    "username": "angel_d_u",
+    "first_name": "Angel",
+    "last_name": "Uzunov",
+    "is_active": true,
+    "is_staff": true,
+    "login_count": 14,
+    "loyal_user": true,
+    "groups": [
+      [
+        "Redactors"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.appuser",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$oQfmFRX8Hp4O2fixO80hRP$92dehczJDraVbNaIneMl3nqnKkOsJR2k9y8TlyF41ls=",
+    "last_login": "2024-12-11T10:13:05.283Z",
+    "is_superuser": false,
+    "date_joined": "2024-12-09T13:47:53Z",
+    "email": "viktor@viktor.com",
+    "username": "viktorio",
+    "first_name": "Viktor",
+    "last_name": "Uzunov",
+    "is_active": true,
+    "is_staff": false,
+    "login_count": 7,
+    "loyal_user": false,
+    "groups": [
+      [
+        "Readers"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.appuser",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$mxdThq6me1Abt1D8lqmslI$yU5+ZIf4B527JEiP5S1aGZI2VA37Uy5ysTmMSR8UNtk=",
+    "last_login": "2024-12-09T13:58:06.331Z",
+    "is_superuser": false,
+    "date_joined": "2024-12-09T13:58:05.781Z",
+    "email": "proben@proben.com",
+    "username": "proben_user",
+    "first_name": "proben",
+    "last_name": "probenov",
+    "is_active": true,
+    "is_staff": false,
+    "login_count": 1,
+    "loyal_user": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 4,
+  "fields": {
+    "first_name": null,
+    "last_name": null,
+    "date_of_birth": null,
+    "profile_picture": null,
+    "location": null,
+    "favorite_team": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 5,
+  "fields": {
+    "first_name": "Angel",
+    "last_name": "Uzunov",
+    "date_of_birth": null,
+    "profile_picture": "https://img.fcbayern.com/image/upload/f_auto/q_auto/t_cms-4x3-seo/v1601390855/cms/public/images/fcbayern-com/players/spielerportraits/ganzkoerper/arjen_robben.png",
+    "location": "Panagyurishte",
+    "favorite_team": "Bayern"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 6,
+  "fields": {
+    "first_name": "Viktor",
+    "last_name": "Uzunov",
+    "date_of_birth": "2006-07-29",
+    "profile_picture": null,
+    "location": "Stara Zagora",
+    "favorite_team": "Chelsea"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 7,
+  "fields": {
+    "first_name": "proben",
+    "last_name": "probenov",
+    "date_of_birth": null,
+    "profile_picture": null,
+    "location": "Stara Zagora",
+    "favorite_team": "Bayern"
+  }
+},
+{
+  "model": "common.comment",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "angel_d_u@abv.bg"
+    ],
+    "to_post": 16,
+    "content": "Those bastards!",
+    "created_at": "2024-12-11T10:08:34.475Z"
+  }
+},
+{
+  "model": "common.comment",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "viktor@viktor.com"
+    ],
+    "to_post": 14,
+    "content": "Why Barca didn't won? They were better!",
+    "created_at": "2024-12-11T10:13:31.227Z"
+  }
+},
+{
+  "model": "common.comment",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "viktor@viktor.com"
+    ],
+    "to_post": 16,
+    "content": "No respect from both!",
+    "created_at": "2024-12-11T10:21:18.641Z"
+  }
+},
+{
+  "model": "common.like",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "angel_d_u@abv.bg"
+    ],
+    "to_post": 17
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 13,
+  "fields": {
+    "title": "January could be the turning point in Real Madrid’s pursuit of Alphonso Davies and Trent Alexander-Arnold",
+    "content": "Rumours of Real Madrid looking to bolster their wing-back positions with the signings of Bayern Munich’s Alphonso Davies and Liverpool’s Trent Alexander-Arnold have been a major talking point for months.\r\n\r\nOver the course of the last six months, both stars have been all but signed and had the deal declared off, sometimes with the story changing on a weekly basis.\r\n\r\nIt is now looking like we are getting closer to the answers that we crave. With the possibility of pre-contract agreements for both stars beginning in January, this could be a crucial month for Real’s transfer dealings.\r\n\r\nAs per Cadena SER, Trent Alexander-Arnold is the more likely of the two deals, with the move for Davies being described as 50/50.\r\n\r\nRight now, the ball is in the court of the two players’ current clubs, as they still have 20 days to get a contract offer on the table and get it signed.\r\n\r\nReal Madrid also have more pressing issues at hand, as they currently face a trip to Bergamo to take on Atalanta, with qualification to the knockout stages of the Champions League hanging in the balance.",
+    "author": [
+      "angel_d_u@abv.bg"
+    ],
+    "image": "https://getfootballnewsspain.com/wp-content/uploads/2024/12/liverpool-fc-v-bayern-munchen-pre-season-friendly-1170x780.jpg",
+    "created_at": "2024-12-10T20:35:22.993Z",
+    "updated_at": "2024-12-10T20:35:23.031Z",
+    "approved": true,
+    "tagged_players": [
+      2,
+      3
+    ],
+    "tagged_teams": [
+      5,
+      6,
+      4
+    ]
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 14,
+  "fields": {
+    "title": "Real Madrid, Barcelona drawn at fourth-tier minnows in Copa del Rey",
+    "content": "La Liga and Champions League holders Madrid face a Minera side which ousted top-flight Alaves in the previous round.\r\nSpanish giants Real Madrid and Barcelona will face fourth-tier minnows Deportivo Minera and Barbastro respectively in the last 32 of the Copa del Rey after the draw on Monday.\r\n\r\nBarca, Madrid, cup holders Athletic Bilbao and runners-up Mallorca enter the competition at this stage after skipping earlier rounds because of their participation in the Spanish Super Cup in January.\r\n\r\nRecord 31-time winners Barcelona beat Barbastro last season in the same round, scraping through with a 3-2 victory.\r\n\r\nLa Liga and Champions League holders Madrid face a Minera side which ousted top-flight Alaves in the previous round.\r\n\r\nCopa champions Athletic visit Logrones, with Mallorca at Pontevedra, who knocked out Villarreal, while Atletico Madrid visit third-tier Marbella.",
+    "author": [
+      "angel_d_u@abv.bg"
+    ],
+    "image": "https://www.hindustantimes.com/ht-img/img/2024/12/09/550x309/FBL-ESP-LIGA-REAL-MADRID-BARCELONA-66_1733756211621_1733756232989.jpg",
+    "created_at": "2024-12-11T08:14:18.221Z",
+    "updated_at": "2024-12-11T08:14:18.258Z",
+    "approved": true,
+    "tagged_players": [],
+    "tagged_teams": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 15,
+  "fields": {
+    "title": "Cristiano Ronaldo is defeated by a fan in a football challenge and it costs MrBeast... a million dollars!",
+    "content": "Cristiano Ronaldo's arrival in the world of YouTube and content creation has undoubtedly been one of the big stories of 2024. It was something that came completely out of the blue, but it has been equally well received by all the Portuguese attacker's fans around the world, something that made him grow at an astonishing rate on the platform.\r\n\r\nIf there is one thing we can be clear about Cristiano Ronaldo is that he is a winner and someone who gives his best in absolutely everything he does, whether it has to do with the world of football or not. Of course, this has also been extrapolated to the world of YouTube and from the very beginning he has expressed his intention to become the biggest channel in the whole world, a really complicated purpose even for him, who is one of the most media people today.\r\n\r\nSurely the main reason or impediment that this can happen is the existence of MrBeast, the biggest YouTuber on the planet and who already has more than 300 million subscribers, astronomical figures that come after years of work. But the Portuguese does not lose faith in achieving it, giving rise to a healthy 'rivalry' that at all times both have handled great and that in fact has led them to collaborate together, first with a chat that could be seen on the channel of UR Cristiano and now in the latest video of MrBeast.\r\n\r\nIf the American YouTuber has always been known for anything, it is the large amounts of money that are usually at stake in all his videos, in which both ordinary people and great stars of today participate. His latest idea has been none other than to mix both worlds and put some of the best athletes in the world in their respective disciplines against some amateurs, who if they managed to win could take home a juicy prize that would surely not hurt them.\r\n\r\nOne of the most special guests, if not the most special, was none other than Cristiano Ronaldo. After it was announced that the Portuguese would collaborate with MrBeast, it was finally revealed what it was all about and it did not leave anyone indifferent. The Portuguese had to face a fan in a football challenge, which consisted of hitting targets placed under the crossbar of the goal with shots from the edge of the area. At stake was no less than one million dollars which, if the challenger won, would go straight into his pocket and, if Cristiano won, would go to charity.\r\n\r\nAgainst all odds, it was Khalid, the follower who finally managed to defeat Cristiano Ronaldo in the accuracy challenge. He did it in a surprisingly comfortable way, as he managed to knock down three of the five total targets while the Al Nassr striker did not manage to knock down any. It was all, of course, in a friendly atmosphere and one in which even the Portuguese wanted his rival to win, as the prize could undoubtedly change his life in a drastic way.",
+    "author": [
+      "angel_d_u@abv.bg"
+    ],
+    "image": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2024/12/01/17330639648192.jpg",
+    "created_at": "2024-12-11T08:17:22.719Z",
+    "updated_at": "2024-12-11T08:17:22.743Z",
+    "approved": true,
+    "tagged_players": [
+      4
+    ],
+    "tagged_teams": []
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 16,
+  "fields": {
+    "title": "There was tension between fans of Levski and CSKA, the police intervened quickly",
+    "content": "In the capital there was tension between fans of Levski and CSKA before the derby with a starting time of 15:45, but the quick police intervention prevented a more serious incident.\r\n\r\nDuring their pre-match parade “blues” fans of Zapalyankov saw supporters of CSKA - Sofia. This caused serious tension, reported Sportal.bg. Levski's ultras marched menacingly towards their opponents with the aim of self-destruction, which necessitated the quick intervention of the law enforcement authorities. In the end, the police did not allow a more serious incident.\r\n\r\nLevski fans organized their traditional procession before the derby with CSKA. At the intersection of the capital boulevards “Maria Luisa“ and “Alexander Dondukov“ however, shortly after its start, an accident occurred in the commotion, reports Gong.bg.\r\n\r\nPeople standing on the sidelines took pictures with their phones of the “blue” crowd, and Levski fans flooded the other canvas with bombs to give extra atmosphere around their walk. At one point, over 10 “blue“ fans started to chase a civilian who made an obscene gesture at them with three fingers of his hand. Fortunately, the quick intervention of the police guarding the procession stopped potential incidents in the center of Sofia.",
+    "author": [
+      "angel_d_u@abv.bg"
+    ],
+    "image": "https://webnews.bg/uploads/images/47/7947/257947/768x432.jpg?_=1476530299",
+    "created_at": "2024-12-11T08:21:05.014Z",
+    "updated_at": "2024-12-11T08:21:05.041Z",
+    "approved": true,
+    "tagged_players": [],
+    "tagged_teams": [
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 17,
+  "fields": {
+    "title": "Robben: Thirty-four is not too old, there is only good or bad",
+    "content": "The Bayern Munich winger has seen his club side struggle for form this season, but he is refusing to read too much into individual and collective dips\r\n\r\nArjen Robben does not want to be judged on his age at Bayern Munich, with the experienced winger admitting there is “only good or bad”.\r\n\r\nThe Dutchman has slotted seamlessly into the first of those categories throughout a distinguished career which has taken him from Groningen to Bavaria via PSV, Chelsea and Real Madrid.\r\n\r\nAt 34 years old, he remains a key figure for Bayern and has taken in 10 appearances so far this season – netting three goals.\r\n\r\nHe told Kicker: “Thirty-four is not too old, we have a personality and an opinion, there is not too old - there is only good or bad.”\r\n\r\nRobben also feels that under-fire coach Niko Kovac remains the right man to guide Bayern forward, with the Croat having come in for criticism during a difficult start to his reign.\r\n\r\n“He is ambitious and a winner, he is looking for ways to make us play better football again,” he added,\r\n\r\nRobben considers a more competitive title chase to be a good thing for German football, with the last six titles having headed to the Allianz Arena without much resistance.\r\n\r\nHe added: “I think it's a good thing the way the table is looking right now. It's what everyone wanted.\r\n\r\n“A few years ago it was said that everything was so boring with Bayern, but I'm not worried.\r\n\r\n“Just because you're winning doesn't mean everything is going well. By the same token, it doesn't mean some things aren't going to plan when you're not. I'm sure it's all in the small details.\r\n\r\n“We need to play with passion, move the ball better, bring back the surprise element and start dominating the opposition again.”\r\n\r\nBayern return to action after the international break on Saturday with a trip to Wolfsburg.",
+    "author": [
+      "angel_d_u@abv.bg"
+    ],
+    "image": "https://assets.goal.com/images/v3/blt2c61c23a19869f88/89e83565ba7cd79b44b802d8edc3df349ea0156b.jpg?auto=webp&format=pjpg&width=1200&quality=60",
+    "created_at": "2024-12-11T08:34:49.826Z",
+    "updated_at": "2024-12-11T08:34:49.857Z",
+    "approved": true,
+    "tagged_players": [
+      5
+    ],
+    "tagged_teams": [
+      6
+    ]
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 18,
+  "fields": {
+    "title": "Oborishte - Panagyurishte II wins 1:0 over Maritsa - Belovo",
+    "content": "Today Oborishte - II defeated the strong team of Maritsa - Belovo. The match was equal, but the hosts had the better chances and naturally stopped one of the best-performing teams in the group.\r\n\r\nThe goal for the hosts fell in the 30th minute, after an exemplary attack. Georgi Liskov scored after a precise pass from Angel Uzunov. In the second half, the hosts missed two more clear chances with a light hand, and this could have turned out to be fatal as the guests from Belovo hit the post at the end of the match.",
+    "author": [
+      "viktor@viktor.com"
+    ],
+    "image": "https://vreme2001.com/wp-content/uploads/2024/08/d09ed0b1d0bed180d0b8d189d0b5-d0b4d183d0b1d18ad0bb.jpg?w=470",
+    "created_at": "2024-12-11T09:10:04.979Z",
+    "updated_at": "2024-12-11T09:10:05.009Z",
+    "approved": false,
+    "tagged_players": [
+      6,
+      7
+    ],
+    "tagged_teams": [
+      9,
+      10
+    ]
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 19,
+  "fields": {
+    "title": "Sahin calls for courage in Barcelona game",
+    "content": 
