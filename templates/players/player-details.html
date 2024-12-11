@@ -6,7 +6,7 @@
 <div class="container mt-4">
     <div class="card">
         {% if player.player_picture %}
-            <img src="{{ player.player_picture }}" class="card-img-top" alt="Player Image" style="height: 300px; object-fit: contain;">
+            <img src="{{ player.player_picture }}" class="card-img-top" alt="Player Image" style="height: 300px; margin-top: 20px; object-fit: contain;">
         {% else %}
             <img src="{% static 'images/player-default-logo.png' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mx-auto d-block mb-3" style="width: 150px;">
         {% endif %}

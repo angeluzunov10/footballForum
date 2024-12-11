@@ -14,15 +14,15 @@
     
         {% include 'common/search-bar.html' %}
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-5 row-cols-md-7 g-5">
             {% for player in players %}
                 <div class="col">
                     <div class="card h-100">
                         {% if player.player_picture %}
-                            <img src="{{ player.player_picture }}" alt="Player Image"
+                            <img src="{{ player.player_picture }}" alt="Player Picture"
                                  class="img-fluid rounded-circle mx-auto d-block mb-3" style="margin-top: 10px; width: 150px; height: 150px;">
                         {% else %}
-                            <img src="{% static 'images/player-default-logo.png' %}" alt="Default Profile Picture"
+                            <img src="{% static 'images/player-default-logo.png' %}" alt="Default Player Picture"
                                  class="img-fluid rounded-circle mx-auto d-block mb-3" style="margin-top: 10px; width: 150px; height: 150px;">
                         {% endif %}
                         <div class="card-body text-center">

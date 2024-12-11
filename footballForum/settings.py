@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
 from pathlib import Path
 
 from decouple import config
@@ -26,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost').split(',')
 
@@ -136,12 +135,12 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 STATIC_URL = 'footballForum/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles/'
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     BASE_DIR / 'static',
-)
+]
 
-MEDIA_URL = 'static/images/'
-MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'static/images/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

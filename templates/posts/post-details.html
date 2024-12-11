@@ -28,7 +28,7 @@
                 <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger mt-3">Delete Post</a>
             {% endif %}
 
-            <p class="card-text mt-5">{{ post.content }}</p>
+            <p class="card-text mt-5">{{ post.content|linebreaks }}</p>
 
             <p><strong>Tagged Players:</strong>
                 {% if post.tagged_players.exists %}
