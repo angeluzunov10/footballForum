@@ -45,7 +45,16 @@
                     {% endif %}
                 </p>
 
-                <p><small>Posted by {{ post.author.username }} on {{ post.created_at }}</small></p>
+                <p>
+                    <small>
+                        Posted by 
+                            <a href="{% url 'profile-details' post.author.profile.pk %}">
+                                {{ post.author.username }}
+                            </a> 
+                        on {{ post.created_at }}
+                    </small>
+                </p>
+
                 <hr>
 
                 <!-- Likes, Shares, and Comments -->
@@ -77,11 +86,11 @@
                     <ul class="list-group mb-3">
                         {% for comment in comments %}
                             <li class="list-group-item">
-                                <strong>{{ comment.user.username }}</strong>: {{ comment.content }}
+                                <strong><a href="{% url 'profile-details' comment.user.profile.pk %}">
+                                {{ comment.user.username }}
+                            </a></strong>: {{ comment.content }}
                                 <small class="text-muted d-block">Posted on {{ comment.created_at }}</small>
-                            </li>
-
-                            <!-- Inline Delete Button -->
+                                <!-- Inline Delete Button -->
                             {% if user == comment.user or can_delete_comment %}
                                 <form method="post" action="{% url 'delete-comment' comment.pk %}" style="margin: 5px;">
                                     {% csrf_token %}
@@ -90,6 +99,7 @@
                                     </button>
                                 </form>
                             {% endif %}
+                            </li>
 
                         {% empty %}
                             <li class="list-group-item text-center">No comments yet. Be the first to comment!</li>
